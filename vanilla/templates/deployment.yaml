@@ -36,7 +36,5 @@ spec:
           ports:
             - containerPort: 9113
       volumes:
-        - configMap:
-            defaultMode: 420
-            name: nginx-config
-          name: nginx-config
+        - name: nginx-config
+          

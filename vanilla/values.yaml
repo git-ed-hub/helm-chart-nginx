@@ -1,0 +1,12 @@
+# Default values for vanilla.
+
+replicaCount: 3
+
+image:
+  repository: testsysadmin8/nginx-vanilla
+
+
+service:
+  type: LoadBalancer
+
+

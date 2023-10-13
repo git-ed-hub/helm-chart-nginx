@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: my-service
+  namespace: vanilla
+  labels:
+    name: vanilla
+spec:
+  selector:
+    matchLabels:
+      app: vanilla
+  endpoints:
+  - port: 80
+    path: /metrics
+  namespaceSelector:
+    matchNames:
+     - vanilla
+    

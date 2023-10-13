@@ -23,7 +23,7 @@ spec:
             - containerPort: 80
           volumeMounts:
             - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf
+              mountPath: /etc/nginx/conf.d/
               subPath: nginx.conf
         - name: nginx-exporter
           image: 'nginx/nginx-prometheus-exporter:0.10.0'

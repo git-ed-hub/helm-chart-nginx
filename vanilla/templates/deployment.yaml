@@ -2,25 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-server
+  labels:
+    app: vanilla
 spec:
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: vanilla
-  replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
         app: vanilla
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '9113'
     spec:
       containers:
-        - name: nginx
-          image: {{ .Values.image.repository }}
-          pullPolicy: IfNotPresent
-          ports:
-            - containerPort: 80
+      - name: nginx
+        image: {{ .Values.image.repository }}
+        ports:
+        - containerPort: 80
           #volumeMounts:
           #  - name: nginx-config
           #    mountPath: /etc/nginx/conf.d/

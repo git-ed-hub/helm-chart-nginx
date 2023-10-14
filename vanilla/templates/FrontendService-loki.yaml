@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    name: query-frontend
+  name: query-frontend
+  namespace: <namespace>
+spec:
+  ports:
+  - name: query-frontend-http
+    port: 3100
+    protocol: TCP
+    targetPort: 3100
+  selector:
+    name: query-frontend
+  sessionAffinity: None
+  type: ClusterIP
+  ClusterIP: None
+  publishNotReadyAddresses: true

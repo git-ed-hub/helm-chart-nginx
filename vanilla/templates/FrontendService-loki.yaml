@@ -5,7 +5,7 @@ metadata:
   labels:
     name: query-frontend
   name: query-frontend
-  namespace: <namespace>
+  namespace: prometheus
 spec:
   ports:
   - name: query-frontend-http

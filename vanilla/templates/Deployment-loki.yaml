@@ -4,7 +4,7 @@ metadata:
   labels:
     name: query-frontend
   name: query-frontend
-  namespace: <namespace>
+  namespace: prometheus
 spec:
   minReadySeconds: 10
   replicas: 2
